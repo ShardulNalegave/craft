@@ -30,8 +30,8 @@ typedef struct CRAFTLogEntry CRAFTLogEntry;
 struct  CRAFTRequestVoteReq
 {
   ProtobufCMessage base;
+  uint32_t candidateid;
   uint64_t term;
-  uint64_t candidateid;
   uint64_t lastlogindex;
   uint64_t lastlogterm;
 };
@@ -54,8 +54,8 @@ struct  CRAFTRequestVoteRes
 struct  CRAFTAppendEntriesReq
 {
   ProtobufCMessage base;
+  uint32_t leaderid;
   uint64_t term;
-  uint64_t leaderid;
   uint64_t prevlogindex;
   uint64_t prevlogterm;
   uint64_t leadercommit;

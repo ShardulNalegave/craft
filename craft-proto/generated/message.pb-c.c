@@ -235,24 +235,24 @@ void   craftlog_entry__free_unpacked
 static const ProtobufCFieldDescriptor craftrequest_vote_req__field_descriptors[4] =
 {
   {
-    "term",
+    "candidateID",
     1,
     PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_UINT64,
+    PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(CRAFTRequestVoteReq, term),
+    offsetof(CRAFTRequestVoteReq, candidateid),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "candidateID",
+    "term",
     2,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
     0,   /* quantifier_offset */
-    offsetof(CRAFTRequestVoteReq, candidateid),
+    offsetof(CRAFTRequestVoteReq, term),
     NULL,
     NULL,
     0,             /* flags */
@@ -284,10 +284,10 @@ static const ProtobufCFieldDescriptor craftrequest_vote_req__field_descriptors[4
   },
 };
 static const unsigned craftrequest_vote_req__field_indices_by_name[] = {
-  1,   /* field[1] = candidateID */
+  0,   /* field[0] = candidateID */
   2,   /* field[2] = lastLogIndex */
   3,   /* field[3] = lastLogTerm */
-  0,   /* field[0] = term */
+  1,   /* field[1] = term */
 };
 static const ProtobufCIntRange craftrequest_vote_req__number_ranges[1 + 1] =
 {
@@ -363,24 +363,24 @@ const ProtobufCMessageDescriptor craftrequest_vote_res__descriptor =
 static const ProtobufCFieldDescriptor craftappend_entries_req__field_descriptors[6] =
 {
   {
-    "term",
+    "leaderID",
     1,
     PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_UINT64,
+    PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(CRAFTAppendEntriesReq, term),
+    offsetof(CRAFTAppendEntriesReq, leaderid),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "leaderID",
+    "term",
     2,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
     0,   /* quantifier_offset */
-    offsetof(CRAFTAppendEntriesReq, leaderid),
+    offsetof(CRAFTAppendEntriesReq, term),
     NULL,
     NULL,
     0,             /* flags */
@@ -438,10 +438,10 @@ static const ProtobufCFieldDescriptor craftappend_entries_req__field_descriptors
 static const unsigned craftappend_entries_req__field_indices_by_name[] = {
   5,   /* field[5] = entries */
   4,   /* field[4] = leaderCommit */
-  1,   /* field[1] = leaderID */
+  0,   /* field[0] = leaderID */
   2,   /* field[2] = prevLogIndex */
   3,   /* field[3] = prevLogTerm */
-  0,   /* field[0] = term */
+  1,   /* field[1] = term */
 };
 static const ProtobufCIntRange craftappend_entries_req__number_ranges[1 + 1] =
 {

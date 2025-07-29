@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 message CRAFTRequestVoteReq {
-    uint64 term                         = 1;
-    uint64 candidateID                  = 2;
+    uint32 candidateID                  = 1;
+    uint64 term                         = 2;
     uint64 lastLogIndex                 = 3;
     uint64 lastLogTerm                  = 4;
 };
@@ -13,8 +13,8 @@ message CRAFTRequestVoteRes {
 };
 
 message CRAFTAppendEntriesReq {
-    uint64 term                         = 1;
-    uint64 leaderID                     = 2;
+    uint32 leaderID                     = 1;
+    uint64 term                         = 2;
     uint64 prevLogIndex                 = 3;
     uint64 prevLogTerm                  = 4;
     uint64 leaderCommit                 = 5;
