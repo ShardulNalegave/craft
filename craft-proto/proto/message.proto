@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+message CRAFTRequestVoteReq {
+    uint64 term                         = 1;
+    uint64 candidateID                  = 2;
+    uint64 lastLogIndex                 = 3;
+    uint64 lastLogTerm                  = 4;
+};
+
+message CRAFTRequestVoteRes {
+    uint64 term                         = 1;
+    bool voteGranted                    = 2;
+};
+
+message CRAFTAppendEntriesReq {
+    uint64 term                         = 1;
+    uint64 leaderID                     = 2;
+    uint64 prevLogIndex                 = 3;
+    uint64 prevLogTerm                  = 4;
+    uint64 leaderCommit                 = 5;
+    repeated CRAFTLogEntry entries      = 6;
+};
+
+message CRAFTAppendEntriesRes {
+    uint64 term                         = 1;
+    bool voteGranted                    = 2;
+};
+
+message CRAFTLogEntry {
+    uint64 len                          = 1;
+    bytes data                          = 2;
+}
