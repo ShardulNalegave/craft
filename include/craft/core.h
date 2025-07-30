@@ -6,13 +6,14 @@
 #include "stdint.h"
 
 #include "craft/opts.h"
+#include "craft/context.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-int craft_init(const craft_opts_t *opts);
-void craft_shutdown();
+craft_ctx_t* craft_init(const craft_opts_t *opts);
+void craft_shutdown(craft_ctx_t *ctx);
 
 #ifdef __cplusplus
 }
